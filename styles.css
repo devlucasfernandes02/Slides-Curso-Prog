@@ -120,6 +120,19 @@ footer i {
     margin-right: 5px;
 }
 
-@media screen  {
+@media screen and (max-width: 480px)  {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        margin: 1.5rem 0 0.5rem 0;
+        font-size: 1.2em;
+        
+    }
     
+    h4 {
+        font-size: 0.9em;
+       
+    }
 }
