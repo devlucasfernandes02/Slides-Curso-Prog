@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Fundamentos da Programação</title>
+    <meta name="description" content="Aula sobre Introdução ao JavaScript">
+    <meta name="author" content="Prof. Dr. Diogo Francisco Borba Rodrigues">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../../reveal.js-master/dist/reset.css">
+    <link rel="stylesheet" href="../../reveal.js-master/dist/reveal.css">
+    <link rel="stylesheet" href="../../reveal.js-master/dist/theme/dracula.css" id="theme">
+
+    <!-- Syntax Highlighting -->
+    <link rel="stylesheet" href="../../reveal.js-master/plugin/highlight/monokai.css">
+</head>
+
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- Slide 1: Variáveis e Constantes -->
+           <section>
+               <h2>Variáveis e Constantes</h2>
+               <p>Espaços na memória que guardam informações. Exemplos de declarações:</p>
+               <pre><code>let nome = "João";</code></pre>
+               <pre><code>const idade = 30;</code></pre>
+           </section>
+            
+            <!-- Slide 2: Entrada de Dados com prompt() -->
+            <section>
+                <h2>Entrada de Dados</h2>
+                <p>Recebendo dados do usuário com <code>prompt()</code>:</p>
+                <pre><code>let nome = prompt("Qual o seu nome?");</code></pre>
+            </section>
+
+            <!-- Slide 3: Comentários no Código -->
+            <section>
+                <h2>Comentários no Código</h2>
+                <p>Comentários ajudam na manutenção do código. Exemplo:</p>
+                <pre><code>// Comentário de uma linha
+                /*
+                Comentário de múltiplas linhas
+                */  
+                </code></pre>
+            </section>
+
+            <!-- Slide 4: Tipos de Dados -->
+            <section>
+                <h2>Tipos de Dados e Conversão</h2>
+                <ul>
+                    <li>String, Number, Boolean, Undefined, Null</li>
+                    <li>Conversão de tipos com <code>Number()</code> e <code>String()</code></li>
+                </ul>
+            </section>
+
+            <!-- Slide 5: Exemplos de Entrada, Processamento e Saída -->
+            <section>
+                <h2>Exemplo de Programa - Entrada, Processamento e Saída</h2>
+                <p>Programa que calcula o dobro de um número:</p>
+                <ul>
+                    <li>Entrada de dados: ler um número</li>
+                    <li>Processamento: calcular o dobro</li>
+                    <li>Saída: informar o dobro</li>
+                </ul>
+                <pre><code>
+                let numero = prompt("Digite um número:");
+                let dobro = numero * 2;
+                alert("O dobro de " + numero + " é " + dobro);
+                </code></pre>
+            </section>
+            <!-- Slide 6: Operadores em JavaScript -->
+            <section>
+                <h2>Operadores em JavaScript</h2>
+                <p>Operadores permitem realizar operações em variáveis e valores. Tipos de operadores:</p>
+                <ul>
+                    <li>Aritméticos</li>
+                    <li>Atribuição</li>
+                    <li>Comparação</li>
+                    <li>Lógicos</li>
+                </ul>
+            </section>
+
+            <!-- Slide 7: Operadores Aritméticos -->
+            <section>
+                <h2>Operadores Aritméticos</h2>
+                <p>Usados para realizar operações matemáticas:</p>
+                <ul>
+                    <li><code>+</code>: Adição</li>
+                    <li><code>-</code>: Subtração</li>
+                    <li><code>*</code>: Multiplicação</li>
+                    <li><code>/</code>: Divisão</li>
+                    <li><code>%</code>: Módulo (Resto da divisão)</li>
+                    <li><code>**</code>: Exponenciação</li>
+                </ul>
+                <pre><code>
+                // Exemplo
+                let soma = 10 + 5; // 15
+                let resto = 10 % 3; // 1
+                </code></pre>
+            </section>
+
+            <!-- Slide 8: Operadores de Atribuição -->
+            <section>
+                <h2>Operadores de Atribuição</h2>
+                <p>Usados para atribuir valores às variáveis:</p>
+                <ul>
+                    <li><code>=</code>: Atribuição simples</li>
+                    <li><code>+=</code>: Adição e atribuição</li>
+                    <li><code>-=</code>: Subtração e atribuição</li>
+                    <li><code>*=</code>: Multiplicação e atribuição</li>
+                    <li><code>/=</code>: Divisão e atribuição</li>
+                    <li><code>%=</code>: Módulo e atribuição</li>
+                </ul>
+                <pre><code>
+                // Exemplo
+                let x = 10;
+                 x += 5; // x = x + 5; Resultado: 15
+                </code></pre>
+            </section>
+
+            <!-- Slide 9: Operadores de Comparação -->
+            <section>
+                <h2>Operadores de Comparação</h2>
+                <p>Usados para comparar valores e retornam um valor booleano:</p>
+                <ul>
+                    <li><code>==</code>: Igual a</li>
+                    <li><code>!=</code>: Diferente de</li>
+                    <li><code>===</code>: Estritamente igual (valor e tipo)</li>
+                    <li><code>!==</code>: Estritamente diferente</li>
+                    <li><code>&gt;</code>: Maior que</li>
+                    <li><code>&lt;</code>: Menor que</li>
+                    <li><code>&gt;=</code>: Maior ou igual a</li>
+                    <li><code>&lt;=</code>: Menor ou igual a</li>
+                </ul>
+                <pre><code>
+            // Exemplo
+            let a = 5;
+            let b = '5';
+            console.log(a == b);  // true
+            console.log(a === b); // false
+                </code></pre>
+            </section>
+
+            <!-- Slide 10: Operadores Lógicos -->
+            <section>
+                <h2>Operadores Lógicos</h2>
+                <p>Usados para combinar expressões lógicas:</p>
+                <ul>
+                    <li><code>&&</code>: E lógico (AND)</li>
+                    <li><code>||</code>: Ou lógico (OR)</li>
+                    <li><code>!</code>: Não lógico (NOT)</li>
+                </ul>
+                <pre><code>
+            // Exemplo
+            let idade = 20;
+            let temHabilitacao = true;
+
+            if (idade >= 18 && temHabilitacao) {
+            console.log("Pode dirigir");
+            }       
+                </code></pre>
+            </section>
+
+
+
+    <script src="../../reveal.js-master/dist/reveal.js"></script>
+    <script src="../../reveal.js-master/plugin/zoom/zoom.js"></script>
+    <script src="../../reveal.js-master/plugin/notes/notes.js"></script>
+    <script src="../../reveal.js-master/plugin/search/search.js"></script>
+    <script src="../../reveal.js-master/plugin/markdown/markdown.js"></script>
+    <script src="../../reveal.js-master/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+            slideNumber: true,
+            plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+        });
+    </script>
+</body>
+
+</html>

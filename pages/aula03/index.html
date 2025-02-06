@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Estruturas Condicionais</title>
+    <meta name="description" content="Aula sobre Introdução ao JavaScript">
+    <meta name="author" content="Prof. Dr. Diogo Francisco Borba Rodrigues">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../../reveal.js-master/dist/reset.css">
+    <link rel="stylesheet" href="../../reveal.js-master/dist/reveal.css">
+    <link rel="stylesheet" href="../../reveal.js-master/dist/theme/dracula.css" id="theme">
+
+    <!-- Syntax Highlighting -->
+    <link rel="stylesheet" href="../../reveal.js-master/plugin/highlight/monokai.css">
+</head>
+
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+
+          <!-- Slide 1: Estruturas Condicionais -->
+          <section>
+            <h2>Estruturas Condicionais</h2>
+            <p>Permitem executar blocos de código com base em condições:</p>
+            <ul>
+                <li><code>if</code></li>
+                <li><code>else</code></li>
+                <li><code>else if</code></li>
+                <li><code>switch</code></li>
+            </ul>
+        </section>
+
+
+          <!-- Slide 2: Exemplo de if/else -->
+          <section>
+            <h2>Exemplo de if/else</h2>
+            <pre><code>
+            let nota = prompt("Digite a nota:");
+
+            if (nota >= 7) {
+            alert("Aprovado");
+            } else {
+            alert("Reprovado");
+            }
+            </code></pre>
+        </section>
+
+         <!-- Slide 3: Exemplo de else if -->
+         <section>
+            <h2>Exemplo de else if</h2>
+            <pre><code>
+            let nota = prompt("Digite a nota:");
+
+            if (nota >= 7) {
+                alert("Aprovado");
+            } else if(nota >= 5 && nota < 7) {
+                alert("Recuperação");
+            } else {
+                alert("Reprovado");
+            }
+            </code></pre>
+        </section>
+
+        <!-- Slide 4: Estrutura switch -->
+        <section>
+            <h2>Estrutura switch</h2>
+            <pre><code>
+            let dia = new Date().getDay();
+
+            switch (dia) {
+            case 0:
+                console.log("Domingo");
+                break;
+            case 1:
+                console.log("Segunda-feira");
+                break;
+            // Outros casos
+            default:
+                console.log("Dia inválido");
+            }
+            </code></pre>
+        </section>
+
+
+
+
+    <script src="../../reveal.js-master/dist/reveal.js"></script>
+    <script src="../../reveal.js-master/plugin/zoom/zoom.js"></script>
+    <script src="../../reveal.js-master/plugin/notes/notes.js"></script>
+    <script src="../../reveal.js-master/plugin/search/search.js"></script>
+    <script src="../../reveal.js-master/plugin/markdown/markdown.js"></script>
+    <script src="../../reveal.js-master/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+            slideNumber: true,
+            plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+        });
+    </script>
+</body>
+
+</html>
