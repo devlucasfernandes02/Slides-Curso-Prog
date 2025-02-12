@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Escopo de Variáveis e Funções Anônimas</title>
+    <meta name="description" content="Aula sobre Introdução ao JavaScript">
+    <meta name="author" content="Prof. Dr. Diogo Francisco Borba Rodrigues">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../../reveal.js-master/dist/reset.css">
+    <link rel="stylesheet" href="../../reveal.js-master/dist/reveal.css">
+    <link rel="stylesheet" href="../../reveal.js-master/dist/theme/dracula.css" id="theme">
+
+    <!-- Syntax Highlighting -->
+    <link rel="stylesheet" href="../../reveal.js-master/plugin/highlight/monokai.css">
+</head>
+
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+
+    <!-- Slide 1: Escopo de Variáveis -->
+        <section>
+            <h2>Escopo de Variáveis</h2>
+            <p>O escopo de variáveis em JavaScript refere-se ao contexto em que uma variável é declarada e onde ela pode ser acessada ou modificada dentro do código</p>
+            <p>E existem três tipos principais de escopo em JavaScript</p>
+            <ul>
+                <li><code>Escopo Global</code></li>
+                <li><code>Escopo Local (Função)</code></li>
+                <li><code>Escopo de Bloco (com let e const)</code></li>
+            </ul>
+        </section>
+
+    <!-- Slide 2: Escopo Global -->
+        <section>
+            <h2>Escopo Global</h2>
+            <span>Variáveis declaradas fora de qualquer função ou bloco têm escopo global</span><br>
+            <pre><code>
+                let nome = "Carlos"; // Escopo global
+
+                function saudacao() {
+                  console.log(nome); // Pode acessar a variável aqui
+                }
+
+                console.log(nome); // Pode acessar a variável aqui
+                saudacao(); // Saída: Carlos
+            </code></pre>
+        </section>
+
+    <!-- Slide 3: Escopo Local (Função) -->
+        <section>
+            <h2>Escopo Local (Função)</h2>
+            <span>Variáveis declaradas dentro de uma função têm escopo local àquela função</span>
+            <span>Elas só podem ser acessadas dentro da função</span>
+            <pre><code>
+                function saudacao() {
+                    let nome = "Carlos"; // Escopo local
+                    console.log(nome); // Pode acessar a variável aqui
+                }
+                
+                saudacao(); // Saída: Carlos
+                console.log(nome); // Não pode acessar aqui
+            </code></pre>
+        </section>
+
+        <!-- Slide 4: Escopo de Bloco (com let e const) -->
+        <section>
+            <h2>Escopo de Bloco (com let e const)</h2>
+            <span>Quando usamos let ou const dentro de blocos (como dentro de loops ou estruturas condicionais)</span> 
+            <span>a variável tem escopo de bloco</span>
+            <pre><code>
+                if (true) {
+                    let nome = "Carlos"; // Escopo de bloco
+                    console.log(nome); // Pode acessar a variável aqui
+                }
+                
+                console.log(nome); // Não pode acessar aqui
+            </code></pre>
+        </section>
+
+        <!-- Slide 5: Funções Anônimas -->
+        <section>
+            <h2>Funções Anônimas</h2>
+            <p>Funções anônimas são funções sem nome. Elas são usadas frequentemente quando você precisa de uma função rápida e não precisa chamar elas por um nome</p>
+            <p>Podem ser atribuídas a variáveis, passadas como argumentos para outras funções ou até usadas diretamente na função</p>
+            <ul>
+                <li><code>let saudacao = function() { //bloco };</code></li>
+            </ul>
+        </section>
+
+        <!-- Slide 6: Função anônima atribuída a uma variável -->
+        <section>
+            <h2>Função anônima atribuída a uma variável</h2>
+            <span>Aqui, a função não tem nome, mas é atribuída à variável saudacao</span><br>
+            <span>Você pode chamá-la usando essa variável</span>
+            <pre><code>
+                let saudacao = function() {
+                    console.log("Olá, bem-vindo ao JavaScript!");
+                };
+                
+                saudacao();  // Saída: Olá, bem-vindo ao JavaScript!
+            </code></pre>
+        </section>
+
+        <!-- Slide 7: Função anônima como argumento de outra função -->
+        <section>
+            <h2>Função anônima como argumento de outra função</h2>
+            <span>Funções anônimas são muito comuns quando usadas como argumentos de outras funções</span><br>
+            <pre><code>
+                function executar(funcao) {
+                    funcao(); // Chama a função passada como argumento
+                }
+                
+                executar(function() {
+                    console.log("Olá, bem-vindo ao JavaScript!");
+                });  // Saída: Olá, bem-vindo ao JavaScript!  
+            </code></pre>
+        </section>
+
+        <!-- Slide 8: Função anônima (Arrow Function - função seta) -->
+        <section>
+            <h2>Arrow Function</h2>
+            <span>Ela foi introduzida no ECMAScript 6 (ES6) e oferece uma sintaxe mais curta para escrever funções anônimas</span><br>
+            <pre><code>
+                const soma = (a, b) => a + b;
+            </code></pre>
+        </section>
+
+
+
+
+    <script src="../../reveal.js-master/dist/reveal.js"></script>
+    <script src="../../reveal.js-master/plugin/zoom/zoom.js"></script>
+    <script src="../../reveal.js-master/plugin/notes/notes.js"></script>
+    <script src="../../reveal.js-master/plugin/search/search.js"></script>
+    <script src="../../reveal.js-master/plugin/markdown/markdown.js"></script>
+    <script src="../../reveal.js-master/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+            slideNumber: true,
+            plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+        });
+    </script>
+</body>
+
+</html>

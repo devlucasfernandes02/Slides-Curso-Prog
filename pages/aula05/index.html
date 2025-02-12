@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Funções em JavaScript: Declaração, Invocação, Parâmetros e Retorno</title>
+    <meta name="description" content="Aula sobre Introdução ao JavaScript">
+    <meta name="author" content="Prof. Dr. Diogo Francisco Borba Rodrigues">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../../reveal.js-master/dist/reset.css">
+    <link rel="stylesheet" href="../../reveal.js-master/dist/reveal.css">
+    <link rel="stylesheet" href="../../reveal.js-master/dist/theme/dracula.css" id="theme">
+
+    <!-- Syntax Highlighting -->
+    <link rel="stylesheet" href="../../reveal.js-master/plugin/highlight/monokai.css">
+</head>
+
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+
+    <!-- Slide 1: Funções em JavaScript -->
+        <section>
+            <h2>Funções em JavaScript</h2>
+            <p>Uma função em JavaScript é um bloco de código reutilizável que executa uma tarefa específica. Ela pode receber argumentos, processar dados e retornar um valor ou apenas executar uma ação</p>
+            <ul>
+                <li><code>
+                    function nome()
+                    {
+                        // bloco de código
+                    }
+                </code></li>
+            </ul>
+        </section>
+
+    <!-- Slide 2: Declaração de Função -->
+        <section>
+            <h2>Declaração de Função</h2>
+            <span>Exemplo simples de declaração</span><br>
+            <span>e invocação de função em JavaScript</span>
+            <pre><code>
+                // Declaração da função
+                function saudacao() {
+                    console.log("Olá, bem-vindo ao JavaScript!");
+                }
+
+                // Invocação (chamada) da função
+                saudacao(); // Saída: "Olá, bem-vindo ao JavaScript!"
+            </code></pre>
+        </section>
+
+    <!-- Slide 3: Exemplo de função sem parâmetros -->
+        <section>
+            <h2>Exemplo de função sem parâmetros</h2>
+            <span>saudacao() não recebe argumentos</span>
+            <span>quando chamada, ela simplesmente executa o código dentro de seu bloco {}</span>
+            <pre><code>
+                function saudacao() {
+                    console.log("Seja Bem-vindo ao JavaScript");
+                }
+            </code></pre>
+        </section>
+
+        <!-- Slide 4: Exemplo de função com parâmetros -->
+        <section>
+            <h2>Exemplo de função com parâmetros</h2>
+            <span>somar() recebe argumentos</span> <span>quando chamada, executa e retorna a soma dos valores dentro do seu bloco {}</span>
+            <pre><code>
+            function somar(valor1, valor2) {
+                return valor1 + valor2; 
+            }
+
+            // Exemplo de chamada
+            console.log(somar(5, 3)); // Saída: 8
+            </code></pre>
+        </section>
+
+        <!-- Slide 5: Funções com retorno, mas sem parâmetros -->
+        <section>
+            <h2>Funções com retorno, mas sem parâmetros</h2>
+            <span>Um exemplo de função assim</span> <span>é a função obterPi(), que não recebe nenhum argumento, mas retorna o valor de PI quando chamada.</span>
+            <pre><code>
+                function obterPi() {
+                    return Math.PI;  // Retorna o valor de pi
+                }
+
+                console.log(obterPi());  // Saída: 3.141592653589793
+            </code></pre>
+        </section>
+
+
+
+
+    <script src="../../reveal.js-master/dist/reveal.js"></script>
+    <script src="../../reveal.js-master/plugin/zoom/zoom.js"></script>
+    <script src="../../reveal.js-master/plugin/notes/notes.js"></script>
+    <script src="../../reveal.js-master/plugin/search/search.js"></script>
+    <script src="../../reveal.js-master/plugin/markdown/markdown.js"></script>
+    <script src="../../reveal.js-master/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+            slideNumber: true,
+            plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+        });
+    </script>
+</body>
+
+</html>
