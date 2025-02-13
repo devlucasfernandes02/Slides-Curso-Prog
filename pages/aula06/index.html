@@ -3,11 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-<<<<<<< HEAD
+
     <title>Estruturas de Repetição</title>
-=======
     <title>Escopo de Variáveis e Funções Anônimas</title>
->>>>>>> cdb1d62d48a8e2a7ba7987f94110895b6e429666
+
     <meta name="description" content="Aula sobre Introdução ao JavaScript">
     <meta name="author" content="Prof. Dr. Diogo Francisco Borba Rodrigues">
 
@@ -28,9 +27,6 @@
     <div class="reveal">
         <div class="slides">
 
-<<<<<<< HEAD
-   
-=======
     <!-- Slide 1: Escopo de Variáveis -->
         <section>
             <h2>Escopo de Variáveis</h2>
@@ -47,7 +43,7 @@
         <section>
             <h2>Escopo Global</h2>
             <span>Variáveis declaradas fora de qualquer função ou bloco têm escopo global</span><br>
->>>>>>> cdb1d62d48a8e2a7ba7987f94110895b6e429666
+
             <pre><code>
                 let nome = "Carlos"; // Escopo global
 
@@ -56,9 +52,9 @@
                 }
 
                 console.log(nome); // Pode acessar a variável aqui
-<<<<<<< HEAD
+
                
-=======
+
                 saudacao(); // Saída: Carlos
             </code></pre>
         </section>
@@ -68,31 +64,30 @@
             <h2>Escopo Local (Função)</h2>
             <span>Variáveis declaradas dentro de uma função têm escopo local àquela função</span>
             <span>Elas só podem ser acessadas dentro da função</span>
->>>>>>> cdb1d62d48a8e2a7ba7987f94110895b6e429666
+
             <pre><code>
                 function saudacao() {
                     let nome = "Carlos"; // Escopo local
                     console.log(nome); // Pode acessar a variável aqui
                 }
                 
-<<<<<<< HEAD
 
-=======
+
+
                 saudacao(); // Saída: Carlos
->>>>>>> cdb1d62d48a8e2a7ba7987f94110895b6e429666
                 console.log(nome); // Não pode acessar aqui
             </code></pre>
         </section>
 
-<<<<<<< HEAD
+
         
-=======
+
         <!-- Slide 4: Escopo de Bloco (com let e const) -->
         <section>
             <h2>Escopo de Bloco (com let e const)</h2>
             <span>Quando usamos let ou const dentro de blocos (como dentro de loops ou estruturas condicionais)</span> 
             <span>a variável tem escopo de bloco</span>
->>>>>>> cdb1d62d48a8e2a7ba7987f94110895b6e429666
+
             <pre><code>
                 if (true) {
                     let nome = "Carlos"; // Escopo de bloco
@@ -103,9 +98,9 @@
             </code></pre>
         </section>
 
-<<<<<<< HEAD
+
         
-=======
+
         <!-- Slide 5: Funções Anônimas -->
         <section>
             <h2>Funções Anônimas</h2>
@@ -121,15 +116,12 @@
             <h2>Função anônima atribuída a uma variável</h2>
             <span>Aqui, a função não tem nome, mas é atribuída à variável saudacao</span><br>
             <span>Você pode chamá-la usando essa variável</span>
->>>>>>> cdb1d62d48a8e2a7ba7987f94110895b6e429666
+
             <pre><code>
                 let saudacao = function() {
                     console.log("Olá, bem-vindo ao JavaScript!");
                 };
                 
-<<<<<<< HEAD
-                
-=======
                 saudacao();  // Saída: Olá, bem-vindo ao JavaScript!
             </code></pre>
         </section>
@@ -138,7 +130,7 @@
         <section>
             <h2>Função anônima como argumento de outra função</h2>
             <span>Funções anônimas são muito comuns quando usadas como argumentos de outras funções</span><br>
->>>>>>> cdb1d62d48a8e2a7ba7987f94110895b6e429666
+
             <pre><code>
                 function executar(funcao) {
                     funcao(); // Chama a função passada como argumento
@@ -146,9 +138,7 @@
                 
                 executar(function() {
                     console.log("Olá, bem-vindo ao JavaScript!");
-<<<<<<< HEAD
-               
-=======
+
                 });  // Saída: Olá, bem-vindo ao JavaScript!  
             </code></pre>
         </section>
@@ -161,10 +151,6 @@
                 const soma = (a, b) => a + b;
             </code></pre>
         </section>
-
-
-
->>>>>>> cdb1d62d48a8e2a7ba7987f94110895b6e429666
 
     <script src="../../reveal.js-master/dist/reveal.js"></script>
     <script src="../../reveal.js-master/plugin/zoom/zoom.js"></script>
@@ -184,8 +170,7 @@
     </script>
 </body>
 
-<<<<<<< HEAD
+
 </html>
-=======
 </html>
->>>>>>> cdb1d62d48a8e2a7ba7987f94110895b6e429666
+
