@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Estruturas de Repetição</title>
+    <meta name="description" content="Aula sobre Introdução ao JavaScript">
+    <meta name="author" content="Prof. Dr. Diogo Francisco Borba Rodrigues">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../../reveal.js-master/dist/reset.css">
+    <link rel="stylesheet" href="../../reveal.js-master/dist/reveal.css">
+    <link rel="stylesheet" href="../../reveal.js-master/dist/theme/dracula.css" id="theme">
+
+    <!-- Syntax Highlighting -->
+    <link rel="stylesheet" href="../../reveal.js-master/plugin/highlight/monokai.css">
+</head>
+
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+
+    <!-- Slide 1: Atividades Práticas e Exercícios em Grupo -->
+        <section>
+            <h2>Atividades Práticas e Exercícios em Grupo</h2>
+            <p>
+                Agora vamos resolver exercícios utilizando funções
+                e escopo em JavaScript
+            </p>
+
+            <pre><code>
+                function() { let variavel }         
+            </code></pre></li>
+            
+        </section>
+
+    <!-- Slide 2: Exercício 1: Função sem parâmetro-->
+        <section>
+            <h2>Exercício 1: Função sem parâmetro</h2>
+            <p> 
+                Crie uma função chamada saudar que imprime
+            </p>
+            <p>
+                "Olá, Mundo!" no console
+            </p>
+        </section>
+
+        <!-- Slide 3: Exercício 1: Resolução-->
+        <section>
+            <h2>Exercício 1 - Resolução</h2>
+            <pre><code>
+            // Definição da função
+            function saudar() {
+                console.log("Olá, Mundo!");
+            }
+
+            // Chamada da função
+            saudar();
+            </code></pre>
+        </section>
+
+        <!-- Slide 4: Exercício 2: Função com parâmetros -->
+        <section>
+            <h2>Exercício 2: Função com parâmetros</h2>
+            <p>Crie uma função chamada soma que receba dois números como parâmetros e retorne a soma deles</p>
+        </section>
+
+         <!-- Slide 5: Exercício 2 - Resolução -->
+         <section>
+            <h2>Exercício 2 - Resolução</h2>
+            <pre><code>
+            // Definição da função
+            function soma(num1, num2) {
+                return num1 + num2;
+            }
+
+            // Chamada da função
+            console.log(soma(10,5)); 
+            
+            Saída: 15
+            </code></pre>
+        </section>
+
+         <!-- Slide 6: Exercício 3: Função Anônimas -->
+         <section>
+            <h2>
+                Exercício 3: Função Anônima
+            </h2>
+            <p> 
+                Crie uma função anônima que seja atribuída a uma variável chamada multiplicar e que
+                receba dois números como parâmetros e retorne o resultado da multiplicação
+            </p>
+        </section>
+
+         <!-- Slide 7: Exercício 3 - Resolução -->
+         <section>
+            <h2>Exercício 3 - Resolução</h2>
+            <pre><code>
+// Definição da função anônima e atribuição à variável "multiplicar"
+const multiplicar = function(num1, num2) {
+    return num1 * num2;
+};
+
+// Chamada da função
+var resultado = multiplicar(4, 5);
+console.log(resultado); // Saída: 20
+            </code></pre>
+        </section>
+
+         <!-- Slide 8: Exercício 4: Escopo de Variável -->
+         <section>
+            <h2>Exercício 4: Escopo de Variável</h2>
+            <p> 
+                Crie duas variáveis, uma dentro de uma função e outra fora dela, e mostre como o escopo dessas variáveis afeta o acesso a elas
+            </p>
+        </section>
+
+        <!-- Slide 8: Exercício 4 - Resolução -->
+        <section>
+            <h2>Exercício 4 - Resolução</h2>
+            
+            <pre><code>
+// Variável de escopo global
+var variavelGlobal = "Eu sou global!";
+
+function testeEscopo() {
+// Variável de escopo local (dentro da função)
+    var variavelLocal = "Eu sou local!";
+
+    console.log(variavelLocal); // Acesso à variável local: funciona
+    console.log(variavelGlobal); // Acesso à variável global: funciona
+}
+
+// Chamada da função
+testeEscopo();
+
+console.log(variavelGlobal); // Acesso à variável global: funciona
+console.log(variavelLocal); // Erro: variavelLocal não está definida fora da função
+            </code></pre>
+        </section>
+
+    <script src="../../reveal.js-master/dist/reveal.js"></script>
+    <script src="../../reveal.js-master/plugin/zoom/zoom.js"></script>
+    <script src="../../reveal.js-master/plugin/notes/notes.js"></script>
+    <script src="../../reveal.js-master/plugin/search/search.js"></script>
+    <script src="../../reveal.js-master/plugin/markdown/markdown.js"></script>
+    <script src="../../reveal.js-master/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+            slideNumber: true,
+            plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+        });
+    </script>
+</body>
+
+</html>

@@ -167,6 +167,54 @@
                 </code></pre>
             </section>
 
+            <section>
+                <h2>Exercício Prático 1</h2>
+                <p>Elaborar um programa que leia um número. Calcule e informe os seus vizinhos, ou seja, o número anterior e posterior.</p>
+                <p> Exemplo:
+                    Número: 15
+                    Vizinho: 14 e 16</p>
+            </section>
+
+            <section>
+                <h2>Resolução Exercício Prático 1</h2>
+                <pre><code>
+let numero = prompt("Digite um número:");
+let anterior = numero - 1;
+let posterior = numero + 1;
+alert("O anterior é " + anterior + " e o posterior é " + posterior);
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Exercício Prático 2</h2>
+                <p>Elaborar um programa para uma pizzaria, o qual
+                    leia o valor total de uma conta e quantos clientes
+                    vão pagá-la. Calcule e informe o valor a ser
+                    pago por cliente.
+                    <p>
+                        Exemplo:
+                        Valor da Conta R$: 90.00
+                        Número de Clientes: 3
+                        Valor por cliente R$: 30
+                    </p></p>
+            </section>
+
+            <section>
+                <h2>Resolução Exercício Prático 2</h2>
+                <pre><code>
+// Valores de entrada
+let valorTotal = 90.00; // Valor total da conta
+let numeroClientes = 3; // Número de clientes
+
+// Calcula o valor por cliente
+let valorPorCliente = valorTotal / numeroClientes;
+
+// Exibe o resultado formatado
+console.log(`Valor por cliente R$: ${valorPorCliente.toFixed(2)}`);
+                </code></pre>
+            </section>
+
+
 
 
     <script src="../../reveal.js-master/dist/reveal.js"></script>
