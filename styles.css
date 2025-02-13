@@ -52,7 +52,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #e0c216;
+    color: #c0cddd;
 }
 
 main {
@@ -90,7 +90,7 @@ section ul li a {
 }
 
 section ul li a:hover {
-    color: #e0c216;
+    color: #5f97e0;
 }
 
 footer {
@@ -113,7 +113,7 @@ footer p {
     margin: 10px 0;
 }
 footer a:hover {
-    color: #e0c216;
+    color:#c0cddd;
 }
 
 footer i {
