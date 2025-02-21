@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Aula 14: localStorage e Mais</title>
-    <meta name="description" content="Aula sobre localStorage e recursos avançados em JavaScript">
+    <title>Aula 13: Formulários e Validação</title>
+    <meta name="description" content="Aula sobre manipulação de formulários e validação em JavaScript">
     <meta name="author" content="Prof. Dr. Diogo Francisco Borba Rodrigues">
 
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -27,147 +27,84 @@
 
     <div class="reveal">
         <div class="slides">
-
-            <!-- Slide 1: Introdução ao localStorage -->
+            <!-- Slide 13: Formulários e Validação -->
             <section>
-                <h2>O que é o localStorage?</h2>
-                <p>O <strong>localStorage</strong> é uma forma de armazenar dados no navegador do usuário de forma persistente.</p>
+                <h2>Formulários e Validação</h2>
+                <p>Formulários são essenciais para coletar dados dos usuários. A validação garante que os dados inseridos sejam corretos.</p>
                 <ul>
-                    <li>Armazena pares chave-valor</li>
-                    <li>Dados não expiram (persistem após fechar o navegador)</li>
-                    <li>Capacidade de aproximadamente 5MB</li>
+                    <li><code>input</code>, <code>textarea</code>, <code>select</code></li>
+                    <li>Validação com JavaScript</li>
+                    <li>Evento <code>submit</code></li>
                 </ul>
             </section>
 
-            <!-- Slide 2: Métodos do localStorage -->
+            <!-- Slide 14: Exemplo de Formulário -->
             <section>
-                <h2>Métodos do localStorage</h2>
-                <ul>
-                    <li><code>setItem(chave, valor)</code>: Armazena um item</li>
-                    <li><code>getItem(chave)</code>: Recupera um item</li>
-                    <li><code>removeItem(chave)</code>: Remove um item</li>
-                    <li><code>clear()</code>: Limpa todos os itens</li>
-                    <li><code>key(index)</code>: Retorna a chave na posição especificada</li>
-                </ul>
-            </section>
-
-            <!-- Slide 3: Armazenando Dados -->
-            <section>
-                <h2>Armazenando Dados</h2>
-                <pre><code>
-// Armazenando um valor
-localStorage.setItem('nome', 'João');
-
-// Recuperando o valor
-let nome = localStorage.getItem('nome');
-console.log(nome); // João
-                </code></pre>
-            </section>
-
-            <!-- Slide 4: Removendo Dados -->
-            <section>
-                <h2>Removendo Dados</h2>
-                <pre><code>
-// Removendo um item específico
-localStorage.removeItem('nome');
-
-// Limpando todos os dados
-localStorage.clear();
-                </code></pre>
-            </section>
-
-            <!-- Slide 5: Armazenando Objetos -->
-            <section>
-                <h2>Armazenando Objetos</h2>
-                <p>Como o localStorage armazena apenas strings, precisamos converter objetos em strings JSON.</p>
-                <pre><code>
-// Objeto JavaScript
-let usuario = { nome: 'Ana', idade: 25 };
-
-// Convertendo para JSON e armazenando
-localStorage.setItem('usuario', JSON.stringify(usuario));
-
-// Recuperando e convertendo de volta para objeto
-let dadosUsuario = JSON.parse(localStorage.getItem('usuario'));
-console.log(dadosUsuario.nome); // Ana
-                </code></pre>
-            </section>
-
-            <!-- Slide 6: Exemplo Prático - Lista de Tarefas -->
-            <section>
-                <h2>Exemplo Prático - Lista de Tarefas</h2>
-                <p>Vamos criar uma simples lista de tarefas que salva os dados no localStorage.</p>
+                <h2>Exemplo de Formulário</h2>
+                <p>Vamos criar um formulário simples com validação:</p>
                 <pre><code>
 // HTML
-&lt;input type="text" id="tarefa" placeholder="Nova tarefa"&gt;
-&lt;button id="adicionar"&gt;Adicionar&lt;/button&gt;
-&lt;ul id="lista"&gt;&lt;/ul&gt;
+&lt;form id="meuFormulario"&gt;
+    &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+    &lt;input type="text" id="nome" name="nome" required&gt;
+    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;
 
 // JavaScript
-let lista = document.getElementById('lista');
-let tarefas = JSON.parse(localStorage.getItem('tarefas')) || [];
+let formulario = document.getElementById("meuFormulario");
 
-function renderizarTarefas() {
-    lista.innerHTML = '';
-    for (let tarefa of tarefas) {
-        let item = document.createElement('li');
-        item.textContent = tarefa;
-        lista.appendChild(item);
+formulario.addEventListener("submit", function(event) {
+    event.preventDefault();
+    let nome = document.getElementById("nome").value;
+    if (nome === "") {
+        alert("Por favor, insira seu nome.");
+    } else {
+        alert("Formulário enviado com sucesso!");
     }
-}
-
-renderizarTarefas();
-
-let btnAdicionar = document.getElementById('adicionar');
-btnAdicionar.addEventListener('click', function() {
-    let novaTarefa = document.getElementById('tarefa').value;
-    tarefas.push(novaTarefa);
-    localStorage.setItem('tarefas', JSON.stringify(tarefas));
-    renderizarTarefas();
-    document.getElementById('tarefa').value = '';
 });
                 </code></pre>
             </section>
 
-            <!-- Slide 7: Sessão vs. Local Storage -->
+            <!-- Slide 15: Validação de Email -->
             <section>
-                <h2>Session Storage vs. Local Storage</h2>
-                <ul>
-                    <li><strong>localStorage:</strong> Dados persistem mesmo após o navegador ser fechado.</li>
-                    <li><strong>sessionStorage:</strong> Dados são removidos quando a sessão termina (fechar a aba ou navegador).</li>
-                </ul>
-            </section>
-
-            <!-- Slide 8: Tratando Exceções -->
-            <section>
-                <h2>Tratando Exceções</h2>
-                <p>É importante tratar erros ao usar o localStorage.</p>
+                <h2>Validação de Email</h2>
+                <p>Validação básica de email usando expressões regulares:</p>
                 <pre><code>
-try {
-    localStorage.setItem('chave', 'valor');
-} catch (e) {
-    if (e == QUOTA_EXCEEDED_ERR) {
-        alert('Limite de armazenamento atingido!');
+// HTML
+&lt;form id="formEmail"&gt;
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;
+
+// JavaScript
+let formEmail = document.getElementById("formEmail");
+
+formEmail.addEventListener("submit", function(event) {
+    event.preventDefault();
+    let email = document.getElementById("email").value;
+    let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (regex.test(email)) {
+        alert("Email válido!");
+    } else {
+        alert("Por favor, insira um email válido.");
     }
-}
+});
                 </code></pre>
             </section>
 
-            <!-- Slide 9: Exercício Prático 1 -->
+            <!-- Slide 16: Armazenamento Local -->
             <section>
-                <h2>Exercício Prático 1</h2>
-                <p>Crie uma aplicação que permite ao usuário armazenar notas em um bloco de notas. As notas devem ser salvas no localStorage.</p>
+                <h2>Armazenamento Local</h2>
+                <p>Podemos armazenar dados do formulário no <code>localStorage</code>:</p>
                 <pre><code>
-// Dica: Utilize um array para armazenar as notas e atualize o localStorage a cada alteração.
-                </code></pre>
-            </section>
-
-            <!-- Slide 10: Exercício Prático 2 -->
-            <section>
-                <h2>Exercício Prático 2</h2>
-                <p>Desenvolva um formulário que salva as preferências do usuário (tema, idioma, etc.) no localStorage e aplica as configurações ao carregar a página.</p>
-                <pre><code>
-// Dica: Use eventos como 'change' em inputs para capturar alterações e salvar as preferências.
+// JavaScript
+formulario.addEventListener("submit", function(event) {
+    event.preventDefault();
+    let nome = document.getElementById("nome").value;
+    localStorage.setItem("nomeUsuario", nome);
+    alert("Nome armazenado com sucesso!");
+});
                 </code></pre>
             </section>
         </div>

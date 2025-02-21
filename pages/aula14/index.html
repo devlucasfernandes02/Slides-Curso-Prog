@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Aula 15: Introdução ao JSON</title>
+    <meta name="description" content="Aula sobre introdução ao JSON em JavaScript">
+    <meta name="author" content="Prof. Dr. Diogo Francisco Borba Rodrigues">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Estilos do Reveal.js -->
+    <link rel="stylesheet" href="../../../reveal.js-master/dist/reset.css">
+    <link rel="stylesheet" href="../../../reveal.js-master/dist/reveal.css">
+    <link rel="stylesheet" href="../../../reveal.js-master/dist/theme/dracula.css" id="theme">
+
+    <!-- Syntax Highlighting -->
+    <link rel="stylesheet" href="../../../reveal.js-master/plugin/highlight/monokai.css">
+</head>
+
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+            <!-- Slide 15: Introdução ao JSON -->
+            <section>
+                <h2>Introdução ao JSON</h2>
+                <p>JSON (JavaScript Object Notation) é um formato leve de troca de dados.</p>
+                <ul>
+                    <li>Fácil de ler e escrever</li>
+                    <li>Fácil de parsear e gerar</li>
+                    <li>Baseado em texto e independente de linguagem</li>
+                </ul>
+            </section>
+
+            <!-- Slide 16: Estrutura do JSON -->
+            <section>
+                <h2>Estrutura do JSON</h2>
+                <p>JSON é composto por pares de chave-valor, semelhante a objetos JavaScript.</p>
+                <pre><code>
+{
+    "nome": "João",
+    "idade": 30,
+    "cidade": "São Paulo",
+    "hobbies": ["ler", "correr", "viajar"]
+}
+                </code></pre>
+            </section>
+
+            <!-- Slide 17: Convertendo JSON para Objeto JavaScript -->
+            <section>
+                <h2>Convertendo JSON para Objeto JavaScript</h2>
+                <p>Use <code>JSON.parse()</code> para converter uma string JSON em um objeto JavaScript.</p>
+                <pre><code>
+let jsonString = '{"nome": "João", "idade": 30}';
+let objeto = JSON.parse(jsonString);
+
+console.log(objeto.nome); // João
+console.log(objeto.idade); // 30
+                </code></pre>
+            </section>
+
+            <!-- Slide 18: Convertendo Objeto JavaScript para JSON -->
+            <section>
+                <h2>Convertendo Objeto JavaScript para JSON</h2>
+                <p>Use <code>JSON.stringify()</code> para converter um objeto JavaScript em uma string JSON.</p>
+                <pre><code>
+let objeto = {
+    nome: "João",
+    idade: 30
+};
+
+let jsonString = JSON.stringify(objeto);
+
+console.log(jsonString); // {"nome":"João","idade":30}
+                </code></pre>
+            </section>
+
+            <!-- Slide 19: Exemplo Prático - Armazenando JSON no localStorage -->
+            <section>
+                <h2>Exemplo Prático - Armazenando JSON no localStorage</h2>
+                <p>Podemos armazenar objetos JavaScript como strings JSON no <code>localStorage</code>.</p>
+                <pre><code>
+let usuario = {
+    nome: "Maria",
+    idade: 25
+};
+
+// Convertendo para JSON e armazenando
+localStorage.setItem("usuario", JSON.stringify(usuario));
+
+// Recuperando e convertendo de volta para objeto
+let usuarioArmazenado = JSON.parse(localStorage.getItem("usuario"));
+
+console.log(usuarioArmazenado.nome); // Maria
+                </code></pre>
+            </section>
+        </div>
+    </div>
+
+    <!-- Scripts do Reveal.js -->
+    <script src="../../../reveal.js-master/dist/reveal.js"></script>
+    <script src="../../../reveal.js-master/plugin/zoom/zoom.js"></script>
+    <script src="../../../reveal.js-master/plugin/notes/notes.js"></script>
+    <script src="../../../reveal.js-master/plugin/search/search.js"></script>
+    <script src="../../../reveal.js-master/plugin/markdown/markdown.js"></script>
+    <script src="../../../reveal.js-master/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+            slideNumber: true,
+            plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+        });
+    </script>
+</body>
+
+</html>
