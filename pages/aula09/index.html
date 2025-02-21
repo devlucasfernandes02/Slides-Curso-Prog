@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Aula 10: Manipulação de Conteúdo e Atributos</title>
+    <meta name="description" content="Aula sobre Manipulação do DOM e Eventos em JavaScript">
+    <meta name="author" content="Prof. Dr. Diogo Francisco Borba Rodrigues">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Estilos do Reveal.js -->
+    <link rel="stylesheet" href="../../../reveal.js-master/dist/reset.css">
+    <link rel="stylesheet" href="../../../reveal.js-master/dist/reveal.css">
+    <link rel="stylesheet" href="../../../reveal.js-master/dist/theme/dracula.css" id="theme">
+
+    <!-- Syntax Highlighting -->
+    <link rel="stylesheet" href="../../../reveal.js-master/plugin/highlight/monokai.css">
+</head>
+
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+            </section>
+
+            <!-- Slide 1: Manipulando Conteúdo -->
+            <section>
+                <h2>Manipulando Conteúdo</h2>
+                <p>Podemos alterar o conteúdo de um elemento usando:</p>
+                <ul>
+                    <li><code>element.textContent</code></li>
+                    <li><code>element.innerHTML</code></li>
+                    <li><code>element.value</code> (para inputs)</li>
+                </ul>
+                <pre><code>
+// Exemplo
+titulo.textContent = "Novo Título";
+                </code></pre>
+            </section>
+
+             <!-- Slide 2: Manipulando Atributos -->
+             <section>
+                <h2>Manipulando Atributos</h2>
+                <p>Podemos modificar atributos de elementos com:</p>
+                <ul>
+                    <li><code>element.setAttribute(atributo, valor)</code></li>
+                    <li><code>element.getAttribute(atributo)</code></li>
+                    <li><code>element.removeAttribute(atributo)</code></li>
+                </ul>
+                <pre><code>
+// Exemplo
+let link = document.querySelector("a");
+link.setAttribute("href", "https://www.exemplo.com");
+let valor = link.getAttribute("href");
+link.removeAttribute("target");
+                </code></pre>
+            </section>
+          
+    <!-- Scripts do Reveal.js -->
+    <script src="../../../reveal.js-master/dist/reveal.js"></script>
+    <script src="../../../reveal.js-master/plugin/zoom/zoom.js"></script>
+    <script src="../../../reveal.js-master/plugin/notes/notes.js"></script>
+    <script src="../../../reveal.js-master/plugin/search/search.js"></script>
+    <script src="../../../reveal.js-master/plugin/markdown/markdown.js"></script>
+    <script src="../../../reveal.js-master/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+            slideNumber: true,
+            plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+        });
+    </script>
+</body>
+
+</html>

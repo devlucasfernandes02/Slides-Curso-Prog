@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Aula 11: Manipulação de Estilos e Classes</title>
+    <meta name="description" content="Aula sobre Manipulação do DOM e Eventos em JavaScript">
+    <meta name="author" content="Prof. Dr. Diogo Francisco Borba Rodrigues">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Estilos do Reveal.js -->
+    <link rel="stylesheet" href="../../../reveal.js-master/dist/reset.css">
+    <link rel="stylesheet" href="../../../reveal.js-master/dist/reveal.css">
+    <link rel="stylesheet" href="../../../reveal.js-master/dist/theme/dracula.css" id="theme">
+
+    <!-- Syntax Highlighting -->
+    <link rel="stylesheet" href="../../../reveal.js-master/plugin/highlight/monokai.css">
+</head>
+
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+            </section>
+            <!-- Slide 7: Eventos em JavaScript -->
+            <section>
+                <h2>Eventos em JavaScript</h2>
+                <p>Eventos são ações ou ocorrências que acontecem no navegador e podem ser capturadas pelo JavaScript.</p>
+                <ul>
+                    <li><code>click</code></li>
+                    <li><code>mouseover</code></li>
+                    <li><code>keydown</code></li>
+                    <li><code>load</code></li>
+                </ul>
+            </section>
+
+            <!-- Slide 8: Adicionando Event Listeners -->
+            <section>
+                <h2>Adicionando Event Listeners</h2>
+                <p>Usamos <code>addEventListener()</code> para capturar eventos:</p>
+                <pre><code>
+// Exemplo
+let botao = document.getElementById("meuBotao");
+
+botao.addEventListener("click", function() {
+    alert("Botão clicado!");
+});
+                </code></pre>
+            </section>
+
+            <!-- Slide 9: Exemplo Prático - Contador -->
+            <section>
+                <h2>Exemplo Prático - Contador</h2>
+                <p>Vamos criar um contador que incrementa ao clicar em um botão.</p>
+                <pre><code>
+// HTML
+&lt;button id="incrementar"&gt;Incrementar&lt;/button&gt;
+&lt;p&gt;Valor: &lt;span id="contador"&gt;0&lt;/span&gt;&lt;/p&gt;
+
+// JavaScript
+let contador = 0;
+let btn = document.getElementById("incrementar");
+let display = document.getElementById("contador");
+
+btn.addEventListener("click", function() {
+    contador++;
+    display.textContent = contador;
+});
+                </code></pre>
+            </section>
+
+            <!-- Slide 17: Exercício Prático 1 -->
+            <section>
+                <h2>Exercício Prático 1</h2>
+                <p>Crie uma página com um botão que, ao ser clicado, muda a cor de fundo da página para uma cor aleatória.</p>
+                <pre><code>
+// JavaScript
+let botao = document.getElementById("mudarCor");
+
+botao.addEventListener("click", function() {
+    let corAleatoria = '#' + Math.floor(Math.random()*16777215).toString(16);
+    document.body.style.backgroundColor = corAleatoria;
+});
+                </code></pre>
+            </section>
+
+  
+
+            <!-- Slide 19: Conclusão -->
+            <section>
+                <h2>Conclusão</h2>
+                <ul>
+                    <li>Aprendemos a manipular o DOM para alterar conteúdo e estilos</li>
+                    <li>Vimos como lidar com eventos em JavaScript</li>
+                    <li>Introduzimos funcionalidades do ES6</li>
+                    <li>Exploramos requisições assíncronas com Fetch API</li>
+                </ul>
+                <p>Pratique os exercícios para aprimorar suas habilidades!</p>
+            </section>
+        </div>
+    </div>
+
+    <!-- Scripts do Reveal.js -->
+    <script src="../../../reveal.js-master/dist/reveal.js"></script>
+    <script src="../../../reveal.js-master/plugin/zoom/zoom.js"></script>
+    <script src="../../../reveal.js-master/plugin/notes/notes.js"></script>
+    <script src="../../../reveal.js-master/plugin/search/search.js"></script>
+    <script src="../../../reveal.js-master/plugin/markdown/markdown.js"></script>
+    <script src="../../../reveal.js-master/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+            slideNumber: true,
+            plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+        });
+    </script>
+</body>
+
+</html>

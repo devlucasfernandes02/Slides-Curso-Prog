@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <title>Aula 11: Manipulação de Estilos e Classes</title>
+    <meta name="description" content="Aula sobre Manipulação do DOM e Eventos em JavaScript">
+    <meta name="author" content="Prof. Dr. Diogo Francisco Borba Rodrigues">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Estilos do Reveal.js -->
+    <link rel="stylesheet" href="../../../reveal.js-master/dist/reset.css">
+    <link rel="stylesheet" href="../../../reveal.js-master/dist/reveal.css">
+    <link rel="stylesheet" href="../../../reveal.js-master/dist/theme/dracula.css" id="theme">
+
+    <!-- Syntax Highlighting -->
+    <link rel="stylesheet" href="../../../reveal.js-master/plugin/highlight/monokai.css">
+</head>
+
+<body>
+
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- Slide 1: Manipulando Estilos -->
+            <section>
+                <h2>Manipulando Estilos</h2>
+                <p>Podemos alterar o estilo de elementos via JavaScript:</p>
+                <pre><code>
+// Exemplo
+let titulo = document.getElementById("titulo");
+titulo.style.color = "blue";
+titulo.style.fontSize = "24px";
+titulo.style.backgroundColor = "lightgray";
+titulo.style.padding = "10px";
+                </code></pre>
+            </section>
+
+            <!-- Slide 2: Alterando Múltiplos Estilos -->
+            <section>
+                <h2>Alterando Múltiplos Estilos</h2>
+                <p>Podemos aplicar múltiplos estilos de uma só vez usando <code>style.cssText</code>:</p>
+                <pre><code>
+// Exemplo
+let paragrafo = document.getElementById("meuParagrafo");
+paragrafo.style.cssText = "color: red; font-weight: bold; background-color: yellow; padding: 5px;";
+                </code></pre>
+            </section>
+
+            <!-- Slide 3: Adicionando e Removendo Classes -->
+            <section>
+                <h2>Adicionando e Removendo Classes</h2>
+                <p>Manipular classes de um elemento facilita a estilização dinâmica:</p>
+                <pre><code>
+// Exemplo
+let elemento = document.getElementById("meuElemento");
+elemento.classList.add("destaque");
+elemento.classList.remove("oculto");
+elemento.classList.toggle("ativo");
+                </code></pre>
+            </section>
+
+            <!-- Slide 4: Verificando Classes -->
+            <section>
+                <h2>Verificando Classes</h2>
+                <p>Podemos verificar se um elemento possui uma classe:</p>
+                <pre><code>
+// Exemplo
+if (elemento.classList.contains("destaque")) {
+    console.log("O elemento tem a classe 'destaque'");
+} else {
+    console.log("O elemento NÃO tem a classe 'destaque'");
+}
+                </code></pre>
+            </section>
+        </div>
+    </div>
+
+    <!-- Scripts do Reveal.js -->
+    <script src="../../../reveal.js-master/dist/reveal.js"></script>
+    <script src="../../../reveal.js-master/plugin/zoom/zoom.js"></script>
+    <script src="../../../reveal.js-master/plugin/notes/notes.js"></script>
+    <script src="../../../reveal.js-master/plugin/search/search.js"></script>
+    <script src="../../../reveal.js-master/plugin/markdown/markdown.js"></script>
+    <script src="../../../reveal.js-master/plugin/highlight/highlight.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+            slideNumber: true,
+            plugins: [RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight]
+        });
+    </script>
+</body>
+
+</html>
